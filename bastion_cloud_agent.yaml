@@ -31,7 +31,7 @@
                                                             {
                                                                     "file_path": "/var/log/httpd/access_log",
                                                                     "log_group_name": '{{ project_name }}-log-group',
-                                                                    "log_stream_name": "WEB/{instance_id}/var/log/httpd/access_log"
+                                                                    "log_stream_name": "bastion_cloudwatch/{instance_id}/var/log/httpd/access_log"
                                                             }
                                                     ]
                                             }

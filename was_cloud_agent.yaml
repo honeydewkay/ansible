@@ -1,5 +1,5 @@
 ---
-- name: cloudwatch was_log
+- name: cloudwatch was_cloudwatch_log
   hosts: localhost
   gather_facts: true
   become: true
@@ -31,19 +31,19 @@
                                                             {
                                                                     "file_path": "/var/log/messages",
                                                                     "log_group_name": '{{ project_name }}-log-group',
-                                                                    "log_stream_name": "WAS/{instance_id}/var/log/messages"
+                                                                    "log_stream_name": "was_cloudwatch/{instance_id}/var/log/messages"
                                                             },
                                                             {
                                                                     "file_path": "/usr/share/tomcat/logs/catalina.out",
                                                                     "log_group_name": '{{ project_name }}-log-group',
-                                                                    "log_stream_name": "WAS/{instance_id}/tomcat/logs/catalina.out"
+                                                                    "log_stream_name": "was_cloudwatch/{instance_id}/tomcat/logs/catalina.out"
                                                             }
                                                     ]
                                             }
                                     }
                             },
                             "metrics":{
-                                    "namespace":"WASResource",
+                                    "namespace":"was_cloudwatchResource",
                                     "append_dimensions": {
                                                             "InstanceId": "${aws:InstanceId}",
                                                             "InstanceType": "${aws:InstanceType}"
